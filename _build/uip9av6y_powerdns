@@ -1,0 +1,15 @@
+#!/bin/bash
+
+NAME=powerdns
+FLAVOUR=pgsql
+VERSION=4.1.8-0-arm64
+DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+LOCATION=/home/pirate/docker_src/uip9av6y-dockerfiles/powerdns/
+
+docker build \
+    --build-arg FLAVOUR=$FLAVOUR \
+    --build-arg VERSION=$VERSION \
+    --build-arg BUILD_DATE=$DATE \
+    -t marcproux/$NAME:$VERSION \
+    $LOCATION
+
